@@ -1,0 +1,655 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+    font-size: 10%;
+    font-size: 8px;
+}
+
+img{
+    height: 100px;
+    width: 100px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+
+hr {
+  margin: 60px;
+}
+
+a {
+    padding: 5px;
+}
+
+
+/*-- Inspiration taken from abdo steif -->
+/* --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100*/
+
+/* Navbar section */
+
+.nav {
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    line-height: 65px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.nav div.logo {
+    float: left;
+    width: auto;
+    height: auto;
+    padding-left: 3rem;
+}
+
+.nav div.logo a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 3rem;
+}
+
+.nav div.logo a:hover {
+    color: #00E676;
+}
+
+.nav div.main_list {
+    height: 65px;
+    float: right;
+}
+
+.nav div.main_list ul {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav div.main_list ul li {
+    width: auto;
+    height: 65px;
+    padding: 0;
+    padding-right: 3rem;
+}
+
+.nav div.main_list ul li a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 65px;
+    font-size: 2.2rem;
+    font-weight: 200;
+}
+
+.nav div.main_list ul li a:hover {
+    color: #00E676;
+}
+
+
+/* Home section */
+
+.home {
+    width: 100%;
+    height: 100vh;
+    background-position: center top;
+    text-align: center;
+    padding-top: 400px;
+    color: white;
+    font-size: 3rem;
+
+    background: black;
+    background: -webkit-linear-gradient(#333, rgba(0, 0, 0, 0)), url(https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b0f6908fa5e81286213c7211276e6b3d&auto=format&fit=crop&w=1600&q=80);
+    background: linear-gradient(#333, rgba(0, 0, 0, 0)), url(https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b0f6908fa5e81286213c7211276e6b3d&auto=format&fit=crop&w=1600&q=80); /* The least supported option. */
+}
+
+.navTrigger {
+    display: none;
+}
+
+.nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.personal-block{
+    font-size: 40px;
+    color: white;
+    padding-top: 300px;
+
+}
+
+.personal{
+    
+    display: inline;
+    position: relative;
+}
+
+.work-item{
+    padding-bottom: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+
+
+/* Media qurey section */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .navTrigger {
+        display: block;
+    }
+    .nav div.logo {
+        margin-left: 15px;
+    }
+    .nav div.main_list {
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+    }
+    .nav div.show_list {
+        height: auto;
+        display: none;
+    }
+    .nav div.main_list ul {
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: #333;
+        background-position: center top;
+    }
+    .nav div.main_list ul li {
+        width: 100%;
+        text-align: right;
+    }
+    .nav div.main_list ul li a {
+        text-align: center;
+        width: 100%;
+        font-size: 3rem;
+        padding: 20px;
+    }
+    .nav div.media_button {
+        display: block;
+    }
+}
+
+
+/* Animation */
+/* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
+
+.navTrigger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    margin: auto;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+}
+
+.navTrigger i {
+    background-color: #fff;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+}
+
+.navTrigger i:nth-child(1) {
+    -webkit-animation: outT 0.8s backwards;
+    animation: outT 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(2) {
+    margin: 5px 0;
+    -webkit-animation: outM 0.8s backwards;
+    animation: outM 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(3) {
+    -webkit-animation: outBtm 0.8s backwards;
+    animation: outBtm 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger.active i:nth-child(1) {
+    -webkit-animation: inT 0.8s forwards;
+    animation: inT 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(2) {
+    -webkit-animation: inM 0.8s forwards;
+    animation: inM 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(3) {
+    -webkit-animation: inBtm 0.8s forwards;
+    animation: inBtm 0.8s forwards;
+}
+
+@-webkit-keyframes inM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes inM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes outM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes outM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes inT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes inT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes outT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes inBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes inBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes outBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+.affix {
+    padding: 0;
+    background-color: #333;
+}
+
+#skills{
+    background-color: lightskyblue;
+    padding-left: 16%;
+    padding-right: 16%;
+  }
+
+#courses{
+    background-color: #333;
+    padding:30px;
+}
+#courses h2{
+    color: white;
+}
+
+#portfolio{
+    height: 110px;
+}
+
+.feature-box{
+    text-align: center;
+    padding: 0;
+}
+
+.feature-icons{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+  
+.feature-title{
+    text-align: center;
+}
+
+.row{
+    padding-bottom: 70px;
+    padding-top: 0px;
+}
+
+.university {
+	text-align:center;
+    font-size: 3rem;
+    margin: 0px;
+    padding: 5px;
+    line-height: 1.1;
+    font-weight: 300;
+}
+
+.myH1 {
+	text-align:center;
+    font-size: 4rem;
+    padding: 50px;
+    margin: 0px;
+}
+
+.myH2 {
+	text-align:center;
+    font-size: 3rem;
+    margin: 0px;
+    padding: 5px;
+    line-height: 1.1;
+}
+.myP {
+	text-align: center;
+    padding: 5px;
+    font-size: 3rem;
+    font-weight: 200;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.myP2 {
+	text-align: center;
+    padding: 5px;
+    font-size: 2.3rem;
+    font-weight: 200;
+    margin: 0;
+}
+
+@media all and (max-width:700px){
+	.myP {
+		padding:2%;
+	}
+}
+
+
+
+/*
+// CSS Needed to make it work (Wrote not using SCSS at all copy and paste away)
+// copy and paste into your CSS and the cursor should appear when typing begins
+*/
+
+.text-js{
+  opacity: 0;
+}
+.cursor{
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: -5px;
+  width: 2px;
+  /* Change colour of Cursor Here */
+  background-color: white;
+  z-index: 1;
+  animation: flash 0.5s none infinite alternate;
+}
+@keyframes flash{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+
+.home-typing{
+    font-size: 5rem;
+    
+}
+
+
+
+
+/* Social Bar Bottom */
+
+.social-buttons {
+    display: block;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 20px;
+    color: black;
+  }
+
+  .social-icon{
+      color: black;
+  }
+
+  i {
+    padding: 0px 8px;
+}
+
+
+
+
+
+/* Slide transitions */
+.slideUp {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+    transition: transform .5s ease-out;
+  }
+  
+  .slideDown {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    transition: transform .5s ease-out;
+  }
+
+
+
+
+
+/* Skills Animated Boxes */
+
+.container{
+    width: 1000px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.container .card{
+    position: relative;
+    cursor: pointer;
+    background-color: #333;
+    border-color: transparent;
+}
+
+.container .card .face{
+    width: 300px;
+    height: 160px;
+    transition: 0.5s;
+}
+
+.container .card .face.face1{
+    position: relative;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+
+.container .card:hover .face.face1{
+    background: #ff0057;
+    transform: translateY(0);
+}
+
+.container .card .face.face1 .content{
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.container .card:hover .face.face1 .content{
+    opacity: 1;
+}
+
+.container .card .face.face1 .content img{
+    max-width: 100px;
+    margin-bottom: 0px;
+    margin-top: 40px;
+}
+
+.container .card .face.face1 .content h3{
+    margin: 10px 0 0;
+    padding: 0;
+    padding-bottom: 50px;
+  
+    color: #fff;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.container .card .face.face2{
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+    transform: translateY(-60px);
+}
+
+.container .card:hover .face.face2{
+    transform: translateY(0);
+}
+
+.container .card .face.face2 .content p{
+    margin: 0;
+    padding: 0px;
+    font-size: 1.9rem;
+    text-align: center;
+    color: #333;
+}
+
+.container .card .face.face2 .content a{
+    margin: 15px 0 0;
+    display:  inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    color: #333;
+    padding: 5px;
+    border: 0;
+}
+
+.container .card .face.face2 .content a:hover{
+    background: #333;
+    color: #fff;
+}
